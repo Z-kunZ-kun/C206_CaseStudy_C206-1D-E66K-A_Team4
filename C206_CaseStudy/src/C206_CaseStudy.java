@@ -21,8 +21,12 @@ public class C206_CaseStudy {
 			if (option == 1) {
 				// View all items
 				C206_CaseStudy.viewAllStudent(studentList);
+			} else if (option == 2) {
+				C206_CaseStudy.setHeader("ADD STUDENT");
+				Student stu = inputStudent();
+				C206_CaseStudy.addStudent(studentList, stu);
+				System.out.println("Student added!");
 				
-
 			} else if (option == 5) {
 				System.out.println("Bye!");
 			} else {
@@ -65,14 +69,19 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-//	public static String viewAllStudent(ArrayList<Student> studentList) { 
-//		System.out.print("\n");
-//		C206_CaseStudy.setHeader("STUDENT LIST");
-//		String output = String.format("%-10s %-14s %-10s %-10s %-10s %-10s\n", "Student ID", "Student Name", "GRADE",
-//				"CLASSROOM", "TEACHER", "REGISTERED?");
-//		output += retrieveAllStudent(studentList);
-//		System.out.println(output);
-//		return output;
-//	}
+	public static Student inputStudent() {
+		int studentID = Helper.readInt("Enter student ID > ");
+		String name = Helper.readString("Enter student name > ");
+		int grade = Helper.readInt("Enter grade > ");
+		String classroom = Helper.readString("Enter class > ");
+		String teacher = Helper.readString("Enter teacher name > ");
+		
+		Student stu = new Student("", "", 0 ,"", studentID, name, grade, classroom, teacher, 0);
+		return stu;
+	}
+	
+	public static void addStudent(ArrayList<Student> studentList, Student stu) {
+		studentList.add(stu);
+	}
 
 }
