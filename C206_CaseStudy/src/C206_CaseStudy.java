@@ -20,12 +20,19 @@ public class C206_CaseStudy {
 
 			if (option == 1) {
 				// View all items
+				C206_CaseStudy.setHeader("VIEW ALL STUDENT");
 				C206_CaseStudy.viewAllStudent(studentList);
 			} else if (option == 2) {
 				C206_CaseStudy.setHeader("ADD STUDENT");
 				Student stu = inputStudent();
 				C206_CaseStudy.addStudent(studentList, stu);
 				System.out.println("Student added!");
+				
+			} else if (option == 3) {
+				C206_CaseStudy.setHeader("DELETE STUDENT");
+				int position = findStudentPosition(studentList);
+				C206_CaseStudy.deleteStudent(studentList, position);
+				System.out.println("Student deleted!");
 				
 			} else if (option == 5) {
 				System.out.println("Bye!");
@@ -52,7 +59,7 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 	}
 	
-	public static String retrieveAllStudent(ArrayList<Student> studentList) {
+	public static String retrieveAllStudent(ArrayList<Student> studentList) { //Haykal
 		String output = "";
 
 		for (int i = 0; i < studentList.size(); i++) {
@@ -62,14 +69,13 @@ public class C206_CaseStudy {
 		return output;
 	}
 	
-	public static void viewAllStudent(ArrayList<Student> studentList) {
-		C206_CaseStudy.setHeader("CCA REGISTRATION SYSTEM");
+	public static void viewAllStudent(ArrayList<Student> studentList) { //Haykal
 		String output = String.format("%-15s %-10s %-10s %-10s %-15s %-10s %-10s\n","STUDENT ID", "NAME", "GRADE", "CLASS", "TEACHER", "CCA ID", "LOWER PRIMARY?");
 		 output += retrieveAllStudent(studentList);	
 		System.out.println(output);
 	}
 	
-	public static Student inputStudent() {
+	public static Student inputStudent() { //Haykal
 		int studentID = Helper.readInt("Enter student ID > ");
 		String name = Helper.readString("Enter student name > ");
 		int grade = Helper.readInt("Enter grade > ");
@@ -80,8 +86,31 @@ public class C206_CaseStudy {
 		return stu;
 	}
 	
-	public static void addStudent(ArrayList<Student> studentList, Student stu) {
+	public static void addStudent(ArrayList<Student> studentList, Student stu) { //Haykal
 		studentList.add(stu);
 	}
+	
+	public static int findStudentPosition(ArrayList<Student> studentList) { //Haykal
+		int position = 0;
+		boolean found = true;
+		while (found != false) {
+			int stuPos = Helper.readInt("Enter student ID > ");
+			for (int i = 0; i < studentList.size(); i++) {
+				if (studentList.get(i).getStudentID() == stuPos) {
+					position = i;
+					found = false;
+				}
+			}
+			if (position == -1) {
+				System.out.print("Unable to find Student ID\n");
+			}
+		}
+		return position;
+	}
+	
+	public static void deleteStudent(ArrayList<Student> studentList, int position) { 
+		studentList.remove(position);
+	}
+	
 
 }
