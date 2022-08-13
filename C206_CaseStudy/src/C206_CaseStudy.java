@@ -65,7 +65,7 @@ public class C206_CaseStudy {
 
 		for (int i = 0; i < studentList.size(); i++) {
 
-			output += String.format("%s\n", studentList.get(i).toString());
+			output += String.format("%s", studentList.get(i).toString());
 		}
 		return output;
 	}
