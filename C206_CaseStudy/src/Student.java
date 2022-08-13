@@ -11,6 +11,7 @@ public class Student extends Parent {
 	public Student(String parentName, String parentEmail, int contactNo, String address, int studentID, String name,
 			int grade, String classroom, String teacher, int ccaID) {
 		super(parentName, parentEmail, contactNo, address);
+		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
 		this.classroom = classroom;
@@ -21,9 +22,9 @@ public class Student extends Parent {
 	}
 
 	public String toString() {
-		String output = super.toString();
+		String output = "";
 		
-		output = String.format("%-63s %-10s %-10s %-10s %-20s %-10s %-10s ", output, studentID, grade, classroom, teacher, ccaID,isLowerPrimary(lowerPrimary));
+		output = String.format("%-15s %-10s %-10s %-10s %-15s %-10s %-10s\n", studentID, name, grade, classroom, teacher, ccaID,isLowerPrimary(lowerPrimary));
 		return output;
 	}
 
