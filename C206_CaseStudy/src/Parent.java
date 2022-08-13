@@ -46,9 +46,8 @@ public class Parent {
 	}
 
 	public String toString() {
-		String output = String.format("%-10s %-10s %-10d %-10d\n", this.parentName, this.parentEmail, this.contactNo,
+		String output = String.format("%-20s %-30s %-10d %-30s\n", this.parentName, this.parentEmail, this.contactNo,
 				this.address);
 		return output;
 	}
-
 }

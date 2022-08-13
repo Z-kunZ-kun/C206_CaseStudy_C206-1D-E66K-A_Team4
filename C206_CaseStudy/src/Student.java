@@ -31,7 +31,7 @@ public class Student extends Parent {
 		String avail;
 
 		if (lowerPrimary == true) {
-			avail = "Yes":
+			avail = "Yes";
 		} else {
 			avail = "No";
 		}
