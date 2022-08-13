@@ -59,6 +59,7 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 	}
 	
+	//FIND ALL STUDENTS IN ARRAYLIST
 	public static String retrieveAllStudent(ArrayList<Student> studentList) { //Haykal
 		String output = "";
 
@@ -69,12 +70,15 @@ public class C206_CaseStudy {
 		return output;
 	}
 	
+	
+	//DISPLAY ALL STUDENTS IN studentList
 	public static void viewAllStudent(ArrayList<Student> studentList) { //Haykal
 		String output = String.format("%-15s %-10s %-10s %-10s %-15s %-10s %-10s\n","STUDENT ID", "NAME", "GRADE", "CLASS", "TEACHER", "CCA ID", "LOWER PRIMARY?");
 		 output += retrieveAllStudent(studentList);	
 		System.out.println(output);
 	}
 	
+	//GET STUDENT DETAILS TO ADD
 	public static Student inputStudent() { //Haykal
 		int studentID = Helper.readInt("Enter student ID > ");
 		String name = Helper.readString("Enter student name > ");
@@ -86,10 +90,12 @@ public class C206_CaseStudy {
 		return stu;
 	}
 	
+	//ADD stu INTO studentList
 	public static void addStudent(ArrayList<Student> studentList, Student stu) { //Haykal
 		studentList.add(stu);
 	}
 	
+	//FINDING STUDENT POSITION WITHIN A LIST
 	public static int findStudentPosition(ArrayList<Student> studentList) { //Haykal
 		int position = 0;
 		boolean found = true;
@@ -108,6 +114,7 @@ public class C206_CaseStudy {
 		return position;
 	}
 	
+	//DELETE STUDENT BASED ON position
 	public static void deleteStudent(ArrayList<Student> studentList, int position) { 
 		studentList.remove(position);
 	}
