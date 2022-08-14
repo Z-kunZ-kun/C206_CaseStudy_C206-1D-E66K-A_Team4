@@ -30,7 +30,7 @@ public class C206_CaseStudyTest {
 
 	
 	@Test
-	public void testAddStudent() {
+	public void testAddStudent() { // Haykal Test Case
 		// Student list is not null, so that can add a new item
 		assertNotNull("Test if there is valid student arraylist to add to", studentList);
 		
@@ -49,7 +49,7 @@ public class C206_CaseStudyTest {
 	}
 
 	@Test
-	public void testRetrieveAllStudents() {
+	public void testRetrieveAllStudents() { // Haykal Test Case
 		// Test if Student list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid student arraylist to add to", studentList);
 		
@@ -75,7 +75,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testDeleteStudent() {
+	public void testDeleteStudent() { // Haykal Test Case
 		// Student list is not null, so that can add a new item
 		assertNotNull("Test if there is valid student arraylist to remove from", studentList);
 		
